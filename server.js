@@ -9,7 +9,9 @@ app.use(express.json({ limit: "1mb" }));
 app.get("/", (req, res) => {
   res.send("J.A.R.V.I.S. backend is online.");
 });
-
+app.get("/api/health", (req, res) => {
+  res.json({ ok: true });
+});
 app.post("/chat", async (req, res) => {
   const message = req.body?.message;
 
